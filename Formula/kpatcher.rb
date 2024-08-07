@@ -1,4 +1,4 @@
-class KPatcher < Formula
+class Kpatcher < Formula
   desc "patch k8s resources at scale"
   homepage "https://github.com/vaibhav1805/kpatcher"
   version "1.0.0"
@@ -15,9 +15,9 @@ class KPatcher < Formula
 
   def install
     if Hardware::CPU.intel?
-      bin.install "kpatcher-darwin-amd64" => "kpatcher"
+      bin.install "amd64/kpatcher" => "kpatcher"
     elsif Hardware::CPU.arm?
-      bin.install "kpatcher-darwin-arm64" => "kpatcher"
+      bin.install "arm64/kpatcher" => "kpatcher"
     end
   end
 
